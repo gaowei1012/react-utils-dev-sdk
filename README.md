@@ -1,15 +1,15 @@
-## react-native-utils-dev-sdk
+## react-utils-dev-sdk
 
 ## react 项目中常用的工具方法
 
 ```shell
-npm install react-native-utils-dev-sdk
+npm install react-utils-dev-sdk
 ```
 
 > 如果在国内网络阻塞，使用 `yarn` 安装 
 
 ```shell
-yarn add react-native-utils-dev-sdk
+yarn add react-utils-dev-sdk
 ```
 
 ## 常用方法
