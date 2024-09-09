@@ -41,3 +41,14 @@ const toady = isToday(1725861630886)
 const url = obj2strUrl({id:'123', pageNum: 0, pageSize: 20})
 // ?id=123&pageNum=0&pageSize=20
 ```
+
+- request 方法
+
+```ts
+export const getList = () => {
+    return reqeust({
+        url: '/list',
+        method: 'GET'
+    }, 'getList')
+}
+```

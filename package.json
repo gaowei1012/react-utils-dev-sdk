@@ -1,6 +1,6 @@
 {
   "name": "react-utils-dev-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "封装常用的js工具方法",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,7 @@
   "author": "执念",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.7",
     "typescript": "^5.5.4"
   }
 }
