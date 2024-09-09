@@ -42,6 +42,13 @@ const url = obj2strUrl({id:'123', pageNum: 0, pageSize: 20})
 // ?id=123&pageNum=0&pageSize=20
 ```
 
+- removeEmptyValues 去除对象中的假值
+
+```ts
+const obj = removeEmptyValues({a: '', b: '2'})
+// { b: '2' }
+```
+
 - request 方法
 
 ```ts

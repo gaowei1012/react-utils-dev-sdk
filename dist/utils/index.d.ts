@@ -40,3 +40,15 @@ export declare const formatSeconds: (totalSeconds: number) => string;
  * @returns
  */
 export declare const convertNumberToUnit: (number: number, unit?: string) => (string | number)[];
+/**
+ * 去除对象中的假值，空值
+ * @param obj {a: '', b: '2'}
+ * @returns { b: '2' }
+ */
+export declare function removeEmptyValues(obj: object): {};
+/**
+ * 生成随机字符串
+ * @param hex 字典
+ * @returns
+ */
+export declare const randomUUID: (length?: number, hex?: string) => any;

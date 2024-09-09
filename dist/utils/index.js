@@ -9,7 +9,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.convertNumberToUnit = exports.formatSeconds = exports.weeksSort = exports.obj2strUrl = exports.isToday = exports.formatTimeSplit = exports.deepCopy = void 0;
+exports.randomUUID = exports.convertNumberToUnit = exports.formatSeconds = exports.weeksSort = exports.obj2strUrl = exports.isToday = exports.formatTimeSplit = exports.deepCopy = void 0;
+exports.removeEmptyValues = removeEmptyValues;
 /**
  * 深拷贝
  * @param obj 传入一个对象
@@ -143,3 +144,41 @@ var convertNumberToUnit = function (number, unit) {
     }
 };
 exports.convertNumberToUnit = convertNumberToUnit;
+/**
+ * 去除对象中的假值，空值
+ * @param obj {a: '', b: '2'}
+ * @returns { b: '2' }
+ */
+function removeEmptyValues(obj) {
+    return Object.keys(obj).reduce(function (acc, key) {
+        if (obj[key] !== 0 && obj[key] !== null && obj[key] !== undefined && !(typeof obj[key] === 'object' && Object.keys(obj[key]).length === 0)) {
+            acc[key] = obj[key];
+        }
+        return acc;
+    }, {});
+}
+/**
+ * 生成随机字符串
+ * @param hex 字典
+ * @returns
+ */
+var randomUUID = function (length, hex) {
+    var s = [];
+    var _length = 36;
+    var hexDigits = '0123456789abcdef';
+    if (length) {
+        _length = length;
+    }
+    if (hex) {
+        hexDigits = hex;
+    }
+    for (var i = 0; i < _length; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = '4'; // bits 12-15 of the time_hi_and_version field to 0010
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    s[8] = s[13] = s[18] = s[23] = '-';
+    var uuid = s.join('');
+    return uuid;
+};
+exports.randomUUID = randomUUID;
