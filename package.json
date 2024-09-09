@@ -2,13 +2,25 @@
   "name": "react-utils-dev-sdk",
   "version": "1.0.0",
   "description": "封装常用的js工具方法",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaowei1012/react-utils-dev-sdk.git"
   },
   "keywords": [
-    "utils"
+    "react-utils-dev-sdk"
   ],
+  "bugs": {
+    "url": "https://github.com/gaowei1012/react-utils-dev-sdk/issues"
+  },
+  "homepage": "https://github.com/gaowei1012/react-utils-dev-sdk#readme",
   "author": "执念",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.5.4"
+  }
 }
