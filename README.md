@@ -59,3 +59,17 @@ export const getList = () => {
     }, 'getList')
 }
 ```
+
+- verifyPhone 校验手机号
+
+```ts
+const verify = verifyPhone(13655712211)
+// true
+```
+
+- verifyAddressName 校验地址（不能包含特殊字符）
+
+```ts
+const verify = verifyAddressName('详细地址')
+// true
+```

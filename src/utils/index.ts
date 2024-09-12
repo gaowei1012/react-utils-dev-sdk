@@ -162,3 +162,35 @@ export const randomUUID = (length?: number, hex?: string) => {
   var uuid = s.join('')
   return uuid
 }
+
+/**
+ * 检验手机格式
+ * @param mobile 需要校验手机号
+ * @returns
+ */
+export const verifyPhone = (mobile: string) => {
+  // 校验手机号
+  const rage = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/
+  const isMobile = rage.test(mobile)
+  if (!isMobile) {
+    return true
+  } else {
+    return false
+  }
+}
+
+/**
+ * 校验收货地址名称
+ * 不能包含特殊字符
+ * @param address 地址信息
+ * @returns 
+ */
+export const verifyAddressName = (address: string) => {
+  var regEn = /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]]/im,
+    regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im
+  if (regCn.test(address) || regEn.test(address)) {
+    return true
+  } else {
+    return false
+  }
+}
