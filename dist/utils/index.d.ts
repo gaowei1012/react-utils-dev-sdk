@@ -52,3 +52,16 @@ export declare function removeEmptyValues(obj: object): {};
  * @returns
  */
 export declare const randomUUID: (length?: number, hex?: string) => any;
+/**
+ * 检验手机格式
+ * @param mobile 需要校验手机号
+ * @returns
+ */
+export declare const verifyPhone: (mobile: string) => boolean;
+/**
+ * 校验收货地址名称
+ * 不能包含特殊字符
+ * @param address 地址信息
+ * @returns
+ */
+export declare const verifyAddressName: (address: string) => boolean;

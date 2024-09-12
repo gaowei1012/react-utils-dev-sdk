@@ -1,6 +1,6 @@
 {
   "name": "react-utils-dev-sdk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "封装常用的js工具方法",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

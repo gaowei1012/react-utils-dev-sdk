@@ -9,7 +9,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     return to.concat(ar || Array.prototype.slice.call(from));
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.randomUUID = exports.convertNumberToUnit = exports.formatSeconds = exports.weeksSort = exports.obj2strUrl = exports.isToday = exports.formatTimeSplit = exports.deepCopy = void 0;
+exports.verifyAddressName = exports.verifyPhone = exports.randomUUID = exports.convertNumberToUnit = exports.formatSeconds = exports.weeksSort = exports.obj2strUrl = exports.isToday = exports.formatTimeSplit = exports.deepCopy = void 0;
 exports.removeEmptyValues = removeEmptyValues;
 /**
  * 深拷贝
@@ -182,3 +182,36 @@ var randomUUID = function (length, hex) {
     return uuid;
 };
 exports.randomUUID = randomUUID;
+/**
+ * 检验手机格式
+ * @param mobile 需要校验手机号
+ * @returns
+ */
+var verifyPhone = function (mobile) {
+    // 校验手机号
+    var rage = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+    var isMobile = rage.test(mobile);
+    if (!isMobile) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
+exports.verifyPhone = verifyPhone;
+/**
+ * 校验收货地址名称
+ * 不能包含特殊字符
+ * @param address 地址信息
+ * @returns
+ */
+var verifyAddressName = function (address) {
+    var regEn = /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]]/im, regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
+    if (regCn.test(address) || regEn.test(address)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
+exports.verifyAddressName = verifyAddressName;
