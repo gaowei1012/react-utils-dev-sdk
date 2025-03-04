@@ -75,6 +75,12 @@ const verify = verifyAddressName('详细地址')
 ```
 
 
+- encode 字符串转base64编码
+
+- getTimeNow 获取当前时间
+
+- getDistanceDays 计算连个日期之间的天数
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=react-utils-dev-sdk/react-utils-dev-sdk&type=Date)](https://star-history.com/#react-utils-dev-sdk/react-utils-dev-sdk&Date)
