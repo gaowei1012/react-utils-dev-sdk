@@ -151,7 +151,7 @@ exports.convertNumberToUnit = convertNumberToUnit;
  */
 function removeEmptyValues(obj) {
     return Object.keys(obj).reduce(function (acc, key) {
-        if (obj[key] !== 0 && obj[key] !== null && obj[key] !== undefined && !(typeof obj[key] === 'object' && Object.keys(obj[key]).length === 0)) {
+        if (obj[key] !== 0 && obj[key] !== null && obj[key] !== undefined && obj[key] !== '' && !(typeof obj[key] === 'object' && Object.keys(obj[key]).length === 0)) {
             acc[key] = obj[key];
         }
         return acc;

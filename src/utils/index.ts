@@ -130,7 +130,7 @@ export const convertNumberToUnit = (number: number, unit?: string) => {
  */
 export function removeEmptyValues(obj: object) {
   return Object.keys(obj).reduce((acc, key) => {
-    if (obj[key] !== 0 && obj[key] !== null && obj[key] !== undefined && !(typeof obj[key] === 'object' && Object.keys(obj[key]).length === 0)) {
+    if (obj[key] !== 0 && obj[key] !== null && obj[key] !== undefined && obj[key] !== '' &&  !(typeof obj[key] === 'object' && Object.keys(obj[key]).length === 0)) {
       acc[key] = obj[key]
     }
     return acc
